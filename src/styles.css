@@ -142,3 +142,94 @@
     color: var(--color-foreground);
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* LP Minha Aula                                                       */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-ma-navy: #0a1640;
+  --color-ma-navy-2: #111f52;
+  --color-ma-navy-3: #071033;
+  --color-ma-line: #253a85;
+  --color-ma-cyan: #5fd4f5;
+  --color-ma-blue: #2563eb;
+  --color-ma-blue-2: #1d3fb8;
+  --color-ma-green: #5ccb84;
+  --color-ma-coral: #f2604b;
+  --color-ma-ice: #eef4ff;
+  --color-ma-muted: #3e4a70;
+  --color-ma-soft: #c6d0ee;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ma-navy);
+    color: var(--color-ma-navy);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* O Tailwind 4 tirou o cursor de mãozinha dos botões */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* O degradê do Hero sai a 138,44° no quadro de 1440 e a 146,38° no de 1920 */
+  :root {
+    --hero-grad-angle: 138.44deg;
+  }
+
+  @media (min-width: 1680px) {
+    :root {
+      --hero-grad-angle: 146.38deg;
+    }
+  }
+}
+
+/* DM Sans com tamanho óptico fixo em 14, como no Figma */
+@utility font-display {
+  font-family: "DM Sans", Inter, sans-serif;
+  font-variation-settings: "opsz" 14;
+}
+
+/* Os títulos ExtraBold do Figma usam o corte de tamanho óptico 40 (mais estreito) */
+@utility font-display-xb {
+  font-family: "DM Sans", Inter, sans-serif;
+  font-variation-settings: "opsz" 40;
+}
+
+/* Grade de quadrados do Hero: ladrilho #087DD8 a 20% sobre o navy, com degradê por cima */
+@utility bg-hero-grid {
+  background-color: #0a1640;
+  background-image:
+    linear-gradient(var(--hero-grad-angle), #0a1640 38.4%, rgba(10, 22, 64, 0) 101.4%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230.2' height='230.2'%3E%3Crect width='225.7' height='225.7' rx='19.8' fill='%230A2B5E'/%3E%3C/svg%3E");
+  background-size: auto, 230.2px 230.2px;
+  background-repeat: no-repeat, repeat;
+}
+
+/* Quadro de 390: navy sólido até 45% da altura e a grade (ladrilho de 118,5px) aparecendo até o pé */
+@utility bg-hero-grid-mobile {
+  background-color: #0a1640;
+  background-image:
+    linear-gradient(180deg, #0a1640 45.3%, rgba(10, 22, 64, 0) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='118.5' height='118.5'%3E%3Crect width='114' height='114' rx='10.2' fill='%230A2B5E'/%3E%3C/svg%3E");
+  background-size: auto, 118.5px 118.5px;
+  background-repeat: no-repeat, repeat;
+}
+
+/* Recuo do Hero no desktop: alinhado ao container de 1112 (quadro de 1920) e, quando a arte não
+   cabe, a composição (texto + arte = 1284px) encosta a 76px da borda direita, com piso de 80px (quadro de 1440) */
+@utility hero-inset {
+  --hero-inset: max(80px, min((100vw - 1112px) / 2, 100vw - 1360px));
+  padding-left: var(--hero-inset);
+}
