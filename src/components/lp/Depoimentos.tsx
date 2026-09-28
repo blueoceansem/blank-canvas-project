@@ -1,6 +1,5 @@
 import { Badge, Container } from "./ui";
 
-
 const DEPOIMENTOS = [
   {
     selo: "Menos atrasos",
