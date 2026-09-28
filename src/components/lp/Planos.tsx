@@ -33,16 +33,11 @@ const INCLUSO = [
   "Comunicação com alunos e responsáveis",
 ];
 
-const GARANTIAS = [
-  { titulo: "Sem contrato", texto: "Plano mensal." },
-  { titulo: "Sem taxa de setup", texto: "Você não paga para começar." },
-  { titulo: "Cancele quando quiser", texto: "Você decide até quando usar." },
-];
 
 export const Planos = () => {
   const { open } = useLeadModal();
   return (
-    <section id="planos" className="bg-ma-navy py-16 xl:pb-16 xl:pt-[63px]">
+    <section id="planos" className="bg-ma-navy py-12 xl:pb-12 xl:pt-[46px]">
       <Container className="flex flex-col items-center">
         <Badge>Planos</Badge>
         <div className="mt-[42px] max-w-[937px] text-center">
@@ -55,7 +50,7 @@ export const Planos = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid w-full gap-6 lg:grid-cols-3 xl:mt-16">
+        <div className="mt-10 grid w-full gap-6 lg:grid-cols-3 xl:mt-11">
           {PLANOS.map((p) => (
             <article
               key={p.nome}
@@ -106,22 +101,6 @@ export const Planos = () => {
             </article>
           ))}
         </div>
-
-        <ul className="mt-14 grid w-full gap-8 text-center md:grid-cols-3 xl:mt-[89px]">
-          {GARANTIAS.map((g) => (
-            <li key={g.titulo} className="flex flex-col gap-[5px]">
-              <p className="text-[24px] font-extrabold leading-[29.04px] text-ma-cyan">
-                {g.titulo}
-              </p>
-              <p className="text-base text-ma-soft">{g.texto}</p>
-            </li>
-          ))}
-        </ul>
-
-        <p className="font-display mt-14 text-center text-[16px] font-semibold leading-[1.4] text-white xl:text-[20px]">
-          Pagamentos processados pelo Asaas · Instituição de pagamento autorizada pelo Banco Central
-          do Brasil.
-        </p>
       </Container>
     </section>
   );
