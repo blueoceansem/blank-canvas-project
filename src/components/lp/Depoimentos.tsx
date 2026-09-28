@@ -1,11 +1,5 @@
 import { Badge, Container } from "./ui";
 
-const NUMEROS = [
-  { valor: "+80", rotulo: "escolas ativas" },
-  { valor: "+2.500", rotulo: "alunos na plataforma" },
-  { valor: "4,8★", rotulo: "avaliação média" },
-  { valor: "+R$ 500 mil", rotulo: "movimentados por mês" },
-];
 
 const DEPOIMENTOS = [
   {
@@ -32,25 +26,11 @@ const DEPOIMENTOS = [
 ];
 
 export const Depoimentos = () => (
-  <section className="bg-ma-ice py-16 xl:pb-[55px] xl:pt-[33px]">
+  <section className="bg-ma-ice py-12 xl:pb-[40px] xl:pt-[28px]">
     <Container className="flex flex-col items-center">
       <Badge tone="green">Quem já usa</Badge>
-      <h2 className="mt-[17px] text-center text-[34px] font-extrabold leading-[1.08] tracking-[-1.2px] text-ma-navy xl:text-[46px] xl:leading-[49.68px] xl:tracking-[-1.6px]">
-        Quem usa, <span className="text-ma-blue">recomenda</span>
-      </h2>
 
-      <ul className="mt-10 grid w-full grid-cols-2 gap-4 lg:grid-cols-4 xl:mt-[41px]">
-        {NUMEROS.map((n) => (
-          <li key={n.rotulo} className="rounded-[20px] bg-ma-navy px-5 py-5 xl:px-7 xl:py-6">
-            <p className="font-display whitespace-nowrap text-[26px] font-black leading-[1.21] tracking-[-1px] sm:text-[30px] text-ma-cyan xl:text-[40px] xl:tracking-[-1.4px]">
-              {n.valor}
-            </p>
-            <p className="mt-[5px] text-[14px] text-ma-soft xl:text-base">{n.rotulo}</p>
-          </li>
-        ))}
-      </ul>
-
-      <ul className="mt-10 grid w-full gap-6 md:grid-cols-3">
+      <ul className="mt-8 grid w-full gap-6 md:grid-cols-3">
         {DEPOIMENTOS.map((d) => (
           <li
             key={d.nome}

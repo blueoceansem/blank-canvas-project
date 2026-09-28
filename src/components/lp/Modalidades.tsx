@@ -26,12 +26,12 @@ export const Modalidades = () => (
           {MODALIDADES.map((m) => (
             <li
               key={m}
-              className="flex h-[46px] items-center justify-center whitespace-nowrap rounded-[22px] border border-[#5C8DF2] bg-[#1D4FC4] px-3 text-[15px] font-semibold text-white sm:text-base"
+              className="flex h-[46px] cursor-pointer items-center justify-center whitespace-nowrap rounded-[22px] border border-[#5C8DF2] bg-[#1D4FC4] px-3 text-[15px] font-semibold text-white transition-[transform,background-color,border-color,box-shadow] duration-200 ease-out hover:-translate-y-[3px] hover:border-white/70 hover:bg-[#3A6BE8] hover:shadow-[0_10px_22px_rgba(7,16,51,0.28)] active:translate-y-0 active:shadow-none sm:text-base"
             >
               {m}
             </li>
           ))}
-          <li className="flex h-[46px] items-center justify-center whitespace-nowrap rounded-[22px] border border-[#5C8DF2] bg-[#0B245C] px-3 text-[15px] font-semibold text-white sm:text-base">
+          <li className="flex h-[46px] cursor-pointer items-center justify-center whitespace-nowrap rounded-[22px] border border-[#5C8DF2] bg-[#0B245C] px-3 text-[15px] font-semibold text-white transition-[transform,background-color,border-color,box-shadow] duration-200 ease-out hover:-translate-y-[3px] hover:border-white/70 hover:bg-[#17357F] hover:shadow-[0_10px_22px_rgba(7,16,51,0.28)] active:translate-y-0 active:shadow-none sm:text-base">
             e muito mais
           </li>
         </ul>
